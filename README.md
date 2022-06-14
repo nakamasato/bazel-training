@@ -1,5 +1,14 @@
 # bazel training
 
+## Prerequisite
+
+[bazel installed](https://docs.bazel.build/versions/main/install-os-x.html#install-on-mac-os-x-homebrew)
+
+```
+bazel --version
+bazel 5.1.1-homebrew
+```
+
 ## Go
 
 ### 1. [Build Go with Bazel](https://christina04.hatenablog.com/entry/using-bazel-to-build-go)
