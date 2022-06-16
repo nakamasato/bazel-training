@@ -13,6 +13,8 @@ bazel 5.1.1-homebrew
 
 ### 1. [Build Go with Bazel](https://christina04.hatenablog.com/entry/using-bazel-to-build-go)
 
+To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gazelle) as **a build file generator** for a Bazel project.
+
 1. Prepare codes
     1. init mod: `go mod init github.com/nakamasato/bazel-training`
     1. `cmd/main.go`
@@ -97,13 +99,59 @@ bazel 5.1.1-homebrew
         version = "v1.3.0",
     )
     ```
-1. Build `cmd`
+
+1. Define a `gazelle-update-repos` command (Optional)
+
+    Add the following lines to `BUILD.bazel`:
+
+    ```
+    gazelle(
+        name = "gazelle-update-repos",
+        args = [
+            "-from_file=go.mod",
+            "-to_macro=deps.bzl%go_dependencies",
+            "-prune",
+        ],
+        command = "update-repos",
+    )
+    ```
+
+    Run the new command:
+
+    ```
+    bazel run //:gazelle-update-repos # same as bazel run //:gazelle update-repos -from_file=go.mod -to_macro=deps.bzl%go_dependencies -prune
+    ```
+
+    This command will update `WORKSPACE`:
+
+    ```
+    load("//:deps.bzl", "go_dependencies")
+
+    # gazelle:repository_macro deps.bzl%go_dependencies
+    go_dependencies()
+    ```
+
+    `deps.bzl` is created:
+
+    ```python
+    def go_dependencies():
+        pass
+    ```
+
+
+1. Build `cmd`.
 
     ```
     bazel build //cmd
     ```
 
+Notes:
+
 1. Symlink.
+    - bazel-bazel-training
+    - bazel-bin
+    - bazel-out
+    - bazel-testlogs
 
 1. [`bazel` concept and terminology](https://docs.bazel.build/versions/main/build-ref.html#intro)
 
@@ -116,3 +164,9 @@ bazel 5.1.1-homebrew
         - `my/app/main`: un-qualified package name
         - `@myrepo//my/app/main`: full-qualified package name
         - `app_binary` or `:app_binary` inside `@myrepo//my/app/main`
+
+## Cheatsheet
+
+1. `bazel run //:gazelle`: Generate build file.
+1. `bazel run //:gazelle -- update-repos -from_file=go.mod`: Update `go_repository` in `WORKSPACE` from `go.mod`.
+1. `bazel build //cmd`: Build a package.

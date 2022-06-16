@@ -28,15 +28,6 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
 ############################################################
 
 go_repository(
-    name = "org_golang_x_mod",
-    build_external = "external",
-    importpath = "golang.org/x/mod",
-    sum = "h1:kQgndtyPBW/JIYERgdxfwMYh3AVStj88WQTlNDi2a+o=",
-    version = "v0.6.0-dev.0.20220106191415-9b9b3d81d5e3",
-)
-# https://github.com/bazelbuild/bazel-gazelle/issues/1217#issuecomment-1121223764
-
-go_repository(
     name = "com_github_google_uuid",
     importpath = "github.com/google/uuid",
     sum = "h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=",
@@ -49,6 +40,11 @@ go_repository(
     sum = "h1:uF6paiQQebLeSXkrTqHqz0MXhXXS1KgF41eUdBNvxK0=",
     version = "v0.0.0-20220609144429-65e65417b02f",
 )
+
+load("//:deps.bzl", "go_dependencies")
+
+# gazelle:repository_macro deps.bzl%go_dependencies
+go_dependencies()
 
 go_rules_dependencies()
 
