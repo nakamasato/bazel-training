@@ -346,5 +346,5 @@ Notes:
 1. `bazel run //:gazelle`: Generate build file.
 1. `bazel run //:gazelle -- update-repos -from_file=go.mod`: Update `go_repository` in `WORKSPACE` from `go.mod`.
 1. `bazel build //cmd`: Build a package `cmd`.
-1. `bazel run //cmd`: Run the package `cmd`.
+1. `bazel run //cmd`: Run a package `cmd`.
 1. `bazel clean`: clean up the cache.
