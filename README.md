@@ -221,7 +221,7 @@ Notes:
 
 [v0.1.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.1.0)
 
-## Build Protobuf
+## Build Protobuf with Bazel
 
 1. Prepare proto files.
 
