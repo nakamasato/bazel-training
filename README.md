@@ -11,7 +11,7 @@ bazel 5.1.1-homebrew
 
 ## Go
 
-### 1. [Build Go with Bazel](https://christina04.hatenablog.com/entry/using-bazel-to-build-go)
+### 1. [Build Go with Bazel & Gazelle](https://christina04.hatenablog.com/entry/using-bazel-to-build-go)
 
 To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gazelle) as **a build file generator** for a Bazel project.
 
@@ -164,6 +164,12 @@ Notes:
         - `my/app/main`: un-qualified package name
         - `@myrepo//my/app/main`: full-qualified package name
         - `app_binary` or `:app_binary` inside `@myrepo//my/app/main`
+
+1. [Running Gazelle with Go](https://github.com/bazelbuild/bazel-gazelle#running-gazelle-with-go)
+
+(skip)
+
+[v0.1.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.1.0)
 
 ## Cheatsheet
 
