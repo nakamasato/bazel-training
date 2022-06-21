@@ -18,7 +18,38 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
 1. Prepare codes
     1. init mod: `go mod init github.com/nakamasato/bazel-training`
     1. `cmd/main.go`
+        ```go
+        package main
+
+        import (
+            "github.com/nakamasato/bazel-training/uuid"
+            "log"
+        )
+
+        func main() {
+            id, err := uuid.Generate()
+            if err != nil {
+                log.Fatal(err)
+            }
+            log.Println(id)
+        }
+        ```
     1. `uuid/uuid.go`
+        ```go
+        package uuid
+
+        import (
+            "github.com/google/uuid"
+        )
+
+        func Generate() (string, error) {
+            u, err := uuid.NewUUID()
+            if err != nil {
+                return "", err
+            }
+            return u.String(), nil
+        }
+        ```
     1. `go mod tidy`
 1. Create `WORKSPACE` <- Just copy from [running-gazelle-with-bazel](https://github.com/bazelbuild/bazel-gazelle#running-gazelle-with-bazel).
 
