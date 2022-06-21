@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "github.com/nakamasato/bazel-training/proto;user";
+
+package user;
+
+import "proto/zipcode.proto";
+
+message Address {
+  string  city     = 1;
+  ZipCode zip_code = 2;
+}
