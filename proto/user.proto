@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/nakamasato/bazel-training/proto;user";
+
+package user;
+
+import "proto/address.proto";
+import "google/protobuf/any.proto";
+
+message User {
+  string              id      = 1;
+  string              name    = 2;
+  Address             address = 3;
+  google.protobuf.Any tags    = 4;
+}
