@@ -51,3 +51,6 @@ bazel 5.1.1-homebrew
 - https://christina04.hatenablog.com/entry/bazel-remote-cache
 - https://christina04.hatenablog.com/entry/test-with-bazel
 - https://christina04.hatenablog.com/entry/bazel-tips
+- https://note.crohaco.net/2020/bazel-golang/
+- https://github.com/bazelbuild/bazel/issues/10134
+- https://github.com/bazelbuild/bazel/issues/15673
