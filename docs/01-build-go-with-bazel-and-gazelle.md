@@ -91,6 +91,8 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
     )
     ```
 
+    -> upgrading to bazel 5.3.0 -> no need of this.
+
     </details>
 
     Check files:
