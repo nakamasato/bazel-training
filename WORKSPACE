@@ -34,13 +34,6 @@ go_repository(
     version = "v1.3.0",
 )
 
-go_repository(
-    name = "org_golang_x_xerrors",
-    importpath = "golang.org/x/xerrors",
-    sum = "h1:uF6paiQQebLeSXkrTqHqz0MXhXXS1KgF41eUdBNvxK0=",
-    version = "v0.0.0-20220609144429-65e65417b02f",
-)
-
 load("//:deps.bzl", "go_dependencies")
 
 # gazelle:repository_macro deps.bzl%go_dependencies
