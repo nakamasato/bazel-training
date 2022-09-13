@@ -6,7 +6,7 @@
 
 ```
 bazel --version
-bazel 5.1.1-homebrew
+bazel 5.3.0
 ```
 ## Basics
 
