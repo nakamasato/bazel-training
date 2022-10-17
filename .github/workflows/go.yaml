@@ -5,6 +5,7 @@ on:
     paths:
       - "cmd/**"
       - "uuid/**"
+      - .github/workflows/go.yaml
 
 
 jobs:
