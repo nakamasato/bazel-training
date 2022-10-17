@@ -1,0 +1,22 @@
+name: go
+
+on:
+  pull_request:
+    paths:
+      - "cmd/**"
+      - "uuid/**"
+
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: cache
+        id: bazel-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/bazel
+          key: ${{ runner.os }}-bazel-cache
+      - name: cmd
+        run: bazel run //cmd
