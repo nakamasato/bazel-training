@@ -2,10 +2,9 @@ name: proto
 
 on:
   pull_request:
-    paths-ignore:
-      - "**.md"
-      - ".github/**"
-      - "!.github/workflows/proto.yaml"
+    paths:
+      - "proto/**"
+      - ".github/workflows/proto.yaml"
 
 
 jobs:

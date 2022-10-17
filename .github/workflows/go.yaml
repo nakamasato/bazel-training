@@ -1,14 +1,15 @@
-name: python
+name: go
 
 on:
   pull_request:
     paths:
-      - "python/**"
-      - .github/workflows/python.yaml
+      - "cmd/**"
+      - "uuid/**"
+      - .github/workflows/go.yaml
 
 
 jobs:
-  python:
+  go:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,5 +19,5 @@ jobs:
         with:
           path: ~/.cache/bazel
           key: ${{ runner.os }}-bazel-cache
-      - run: |
-          bazel run //python:main
+      - name: cmd
+        run: bazel run //cmd
