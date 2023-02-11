@@ -5,7 +5,7 @@ on:
     paths:
       - "proto/**"
       - ".github/workflows/proto.yaml"
-
+      - WORKSPACE
 
 jobs:
   proto:
