@@ -6,7 +6,7 @@ on:
       - "cmd/**"
       - "uuid/**"
       - .github/workflows/go.yaml
-
+      - WORKSPACE
 
 jobs:
   go:
