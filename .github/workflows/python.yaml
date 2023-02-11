@@ -5,7 +5,7 @@ on:
     paths:
       - "python/**"
       - .github/workflows/python.yaml
-
+      - WORKSPACE
 
 jobs:
   python:
