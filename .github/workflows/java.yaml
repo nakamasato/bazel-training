@@ -8,7 +8,7 @@ on:
       - WORKSPACE
 
 jobs:
-  proto:
+  java:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
