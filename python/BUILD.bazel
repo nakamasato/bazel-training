@@ -1,10 +1,17 @@
 load("@rules_python//python:defs.bzl", "py_binary")
 load("@poetry//:dependencies.bzl", "dependency")
+load("@rules_proto//proto:defs.bzl", "proto_library")
 
 py_binary(
     name = "main",
     srcs = ["main.py"],
     deps = [
         dependency("pandas"),
+        ":user_proto",
     ],
+)
+
+proto_library(
+    name = "user_proto",
+    srcs = ["user.proto"],
 )
