@@ -31,15 +31,22 @@ bazel 5.3.0
 1. [Build Go with Bazel & Gazelle](docs/01-build-go-with-bazel-and-gazelle.md) ([v0.1.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.1.0))
 1. [Build Protobuf with Bazel](docs/02-build-protobuf-with-bazel.md) ([v0.2.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.2.0))
 1. [Build Python with Bazel](docs/03-build-python-with-bazel.md)
+1. [Build Java poject with Bazel](docs/04-build-java-with-bazel.md)
 
 ## Cheatsheet
 
-1. `bazel run //:gazelle`: Generate build file.
-1. `bazel run //:gazelle -- update-repos -from_file=go.mod`: Update `go_repository` in `WORKSPACE` from `go.mod`.
-1. `bazel build //cmd`: Build a package `cmd`.
-1. `bazel run //cmd`: Run a package `cmd`.
-1. `bazel clean`: clean up the cache.
-
+1. Bazel
+    1. `bazel clean`: clean up the cache.
+1. Java:
+    1. build: `bazel build //java:App`
+    1. run: `bazel run //java:App`
+    1. check dep: `bazel query  --notool_deps --noimplicit_deps "deps(//java:App)" --output graph`
+1. Python: `bazel run //python:main`
+1. Go:
+    1. build: `bazel build //cmd`: Build a package `cmd`.
+    1. run: `bazel run //cmd`: Run a package `cmd`.
+    1. `bazel run //:gazelle`: Generate build file.
+    1. `bazel run //:gazelle -- update-repos -from_file=go.mod`: Update `go_repository` in `WORKSPACE` from `go.mod`.
 ## FAQ
 1. How to upgrade `http_archive` version?
 

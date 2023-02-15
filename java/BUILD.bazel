@@ -1,0 +1,4 @@
+java_binary(
+    name = "App",
+    srcs = glob(["app/src/main/java/sample/*.java"]),
+)

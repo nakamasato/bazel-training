@@ -1,0 +1,23 @@
+name: java
+
+on:
+  pull_request:
+    paths:
+      - "java/**"
+      - ".github/workflows/java.yaml"
+      - WORKSPACE
+
+jobs:
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: cache
+        id: bazel-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/bazel
+          key: ${{ runner.os }}-bazel-cache
+      - run: |
+          bazel build //java:App
+          bazel run //java:App
