@@ -1,7 +1,14 @@
 load("@rules_python//python:defs.bzl", "py_binary")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "user_proto",
+    srcs = ["user.proto"],
+)
 
 py_binary(
   name = "main",
   srcs = ["main.py"],
+  deps = [":user_proto"],
 )
 

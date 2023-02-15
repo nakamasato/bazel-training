@@ -1,2 +1,5 @@
+import user_pb2
+
 if __name__ == '__main__':
-    print("hello world")
+    user = user_pb2.User()
+    print(f"hello, {user}")
