@@ -79,7 +79,7 @@ BUILD SUCCESSFUL in 666ms
 
 ### Basic
 
-1. Add `BUILD`
+1. Add `BUILD.bazel`
     ```
     java_binary(
         name = "App",
