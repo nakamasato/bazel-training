@@ -6,7 +6,7 @@
 
 ```
 bazel --version
-bazel 5.3.0
+bazel 6.0.0
 ```
 ## Basics
 
