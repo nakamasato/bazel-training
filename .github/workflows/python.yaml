@@ -6,6 +6,9 @@ on:
       - "python/**"
       - .github/workflows/python.yaml
       - WORKSPACE
+  push:
+    branches:
+      main
 
 jobs:
   python:

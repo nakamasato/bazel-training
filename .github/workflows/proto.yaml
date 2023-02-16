@@ -6,6 +6,9 @@ on:
       - "proto/**"
       - ".github/workflows/proto.yaml"
       - WORKSPACE
+  push:
+    branches:
+      main
 
 jobs:
   proto:
