@@ -1,4 +1,4 @@
-# Build Python with poetry dependencies
+# [Build Python with poetry dependencies](https://github.com/soniaai/rules_poetry)
 
 ## Poetry version
 
