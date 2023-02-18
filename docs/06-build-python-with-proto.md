@@ -26,8 +26,10 @@
 
     if __name__ == '__main__':
         user = User()
+        user.id = "id1"
+        user.name = "John"
         df = pd.DataFrame()
-        print(f"hello, {user}, {df.shape}")
+        print(f"hello, {user.id=} {user.name=}, {df.shape=}")
     ```
 1. Add `protobuf` to poetry.
 
@@ -37,7 +39,7 @@
 1. Run the main.py with poetry.
     ```
     poetry run python python/main.py
-    hello, , (0, 0)
+    hello, user.id='id1' user.name='John', df.shape=(0, 0)
     ```
 
 ## Run python proto generated code with Bazel
@@ -93,7 +95,7 @@
     INFO: 1 process: 1 internal.
     INFO: Build completed successfully, 1 total action
     INFO: Running command line: bazel-bin/python/main
-    hello, , (0, 0)
+    hello, user.id='id1' user.name='John', df.shape=(0, 0)
     ```
 
 ## References
