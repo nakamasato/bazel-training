@@ -28,10 +28,11 @@ bazel 6.0.0
 
 ## Contents
 
-1. [Build Go with Bazel & Gazelle](docs/01-build-go-with-bazel-and-gazelle.md) ([v0.1.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.1.0))
-1. [Build Protobuf with Bazel](docs/02-build-protobuf-with-bazel.md) ([v0.2.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.2.0))
-1. [Build Python with Bazel](docs/03-build-python-with-bazel.md) ([v0.3.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.3.0))
-1. [Build Java poject with Bazel](docs/04-build-java-with-bazel.md) ([v0.4.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.4.0))
+1. [Build Go with Gazelle](docs/01-build-go-with-gazelle.md) ([v0.1.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.1.0))
+1. [Build Protobuf](docs/02-build-protobuf.md) ([v0.2.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.2.0))
+1. [Build Python](docs/03-build-python.md) ([v0.3.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.3.0))
+1. [Build Java](docs/04-build-java.md) ([v0.4.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.4.0))
+1. [Build Python with Poetry](docs/04-build-python-with-poetry.md) ([v0.5.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.5.0))
 
 ## Cheatsheet
 
