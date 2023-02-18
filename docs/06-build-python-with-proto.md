@@ -1,6 +1,4 @@
 # Build Python with protobuf
-
-
 ## Run python proto generated code with poetry
 
 1. Prepare proto file `python/user.proto`
@@ -97,3 +95,6 @@
     INFO: Running command line: bazel-bin/python/main
     hello, , (0, 0)
     ```
+
+## References
+- https://thethoughtfulkoala.com/posts/2020/05/08/py-protobuf-bazel.html
