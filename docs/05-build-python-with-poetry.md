@@ -1,5 +1,7 @@
 # Build Python with poetry dependencies
 
+https://github.com/soniaai/rules_poetry
+
 ## Poetry version
 
 version <1.3.0 (as poetry rule hasn't supported [new poetry.lock format introduced in 1.3.0](https://python-poetry.org/blog/announcing-poetry-1.3.0/#new-lock-file-format))
