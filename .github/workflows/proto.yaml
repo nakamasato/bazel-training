@@ -8,7 +8,7 @@ on:
       - WORKSPACE
   push:
     branches:
-      main
+      - main
 
 jobs:
   proto:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/bazel
-          key: ${{ runner.os }}-bazel-cache
+          key: ${{ runner.os }}-bazel-cache-proto
       - run: |
           bazel run //:gazelle
           bazel build //proto

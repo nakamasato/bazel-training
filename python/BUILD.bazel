@@ -2,10 +2,9 @@ load("@rules_python//python:defs.bzl", "py_binary")
 load("@poetry//:dependencies.bzl", "dependency")
 
 py_binary(
-  name = "main",
-  srcs = ["main.py"],
-  deps = [
-    dependency("pandas")
-  ],
+    name = "main",
+    srcs = ["main.py"],
+    deps = [
+        dependency("pandas"),
+    ],
 )
-

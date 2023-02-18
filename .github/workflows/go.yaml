@@ -3,13 +3,12 @@ name: go
 on:
   pull_request:
     paths:
-      - "cmd/**"
-      - "uuid/**"
+      - "go/**"
       - .github/workflows/go.yaml
       - WORKSPACE
   push:
     branches:
-      main
+      - main
 
 jobs:
   go:
@@ -21,6 +20,6 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/bazel
-          key: ${{ runner.os }}-bazel-cache
-      - name: cmd
-        run: bazel run //cmd
+          key: ${{ runner.os }}-bazel-cache-go
+      - run: |
+          bazel run //go/cmd

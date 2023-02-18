@@ -60,6 +60,7 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 http_archive(
     name = "rules_python",
     sha256 = "29a801171f7ca190c543406f9894abf2d483c206e14d6acbd695623662320097",
