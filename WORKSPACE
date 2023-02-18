@@ -77,3 +77,24 @@ python_register_toolchains(
 )
 
 load("@python3_9//:defs.bzl", "interpreter")
+
+# Poetry rules for managing Python dependencies
+
+http_archive(
+    name = "com_sonia_rules_poetry",
+    sha256 = "6dcb6ee86a9d507ef356097c5f2e16cb5e01c32021ff13cd28c0bb17bf5d8266",
+    strip_prefix = "rules_poetry-d7a852ae69d22fe4670e34822cd376a69db0485e",
+    urls = ["https://github.com/soniaai/rules_poetry/archive/d7a852ae69d22fe4670e34822cd376a69db0485e.tar.gz"],
+)
+
+load("@com_sonia_rules_poetry//rules_poetry:defs.bzl", "poetry_deps")
+
+poetry_deps()
+
+load("@com_sonia_rules_poetry//rules_poetry:poetry.bzl", "poetry")
+
+poetry(
+    name = "poetry",
+    lockfile = "//:poetry.lock",
+    pyproject = "//:pyproject.toml",
+)
