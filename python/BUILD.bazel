@@ -1,6 +1,6 @@
 load("@rules_python//python:defs.bzl", "py_binary")
 load("@poetry//:dependencies.bzl", "dependency")
-load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
 
 py_binary(
     name = "main",
@@ -11,7 +11,7 @@ py_binary(
     ],
 )
 
-proto_library(
+py_proto_library(
     name = "user_proto",
     srcs = ["user.proto"],
 )

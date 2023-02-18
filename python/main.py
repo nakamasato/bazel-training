@@ -1,7 +1,7 @@
 import pandas as pd
-import user_pb2
+from python.user_pb2 import User
 
 if __name__ == '__main__':
-    user = user_pb2.User()
+    user = User()
     df = pd.DataFrame()
     print(f"hello, {user}, {df.shape}")
