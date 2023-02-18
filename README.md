@@ -32,7 +32,7 @@ bazel 6.0.0
 1. [Build Protobuf](docs/02-build-protobuf.md) ([v0.2.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.2.0))
 1. [Build Python](docs/03-build-python.md) ([v0.3.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.3.0))
 1. [Build Java](docs/04-build-java.md) ([v0.4.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.4.0))
-1. [Build Python with Poetry](docs/04-build-python-with-poetry.md) ([v0.5.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.5.0))
+1. [Build Python with Poetry](docs/05-build-python-with-poetry.md) ([v0.5.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.5.0))
 
 ## Cheatsheet
 
