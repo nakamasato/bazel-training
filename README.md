@@ -33,6 +33,7 @@ bazel 6.0.0
 1. [Build Python](docs/03-build-python.md) ([v0.3.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.3.0))
 1. [Build Java](docs/04-build-java.md) ([v0.4.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.4.0))
 1. [Build Python with Poetry](docs/05-build-python-with-poetry.md) ([v0.5.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.5.0))
+1. [Build Python with Proto](docs/06-build-python-with-proto.md) ([v0.6.0](https://github.com/nakamasato/bazel-training/releases/tag/v0.6.0))
 
 ## Cheatsheet
 
@@ -41,7 +42,7 @@ bazel 6.0.0
 1. Java:
     1. build: `bazel build //java:App`
     1. run: `bazel run //java:App`
-    1. check dep: `bazel query  --notool_deps --noimplicit_deps "deps(//java:App)" --output graph`
+    1. check dep: `bazel query --notool_deps --noimplicit_deps "deps(//java:App)" --output graph`
 1. Python: `bazel run //python:main`
 1. Go:
     1. build: `bazel build //go/cmd`: Build a package `cmd`.
