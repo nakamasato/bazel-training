@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/nakamasato/bazel-training/uuid"
+	"github.com/nakamasato/bazel-training/go/uuid"
 	"log"
 )
 

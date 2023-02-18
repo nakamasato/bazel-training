@@ -6,12 +6,12 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
 
 1. Prepare codes
     1. init mod: `go mod init github.com/nakamasato/bazel-training`
-    1. `cmd/main.go`
+    1. `go/cmd/main.go`
         ```go
         package main
 
         import (
-            "github.com/nakamasato/bazel-training/uuid"
+            "github.com/nakamasato/bazel-training/go/uuid"
             "log"
         )
 
@@ -23,7 +23,7 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
             log.Println(id)
         }
         ```
-    1. `uuid/uuid.go`
+    1. `go/uuid/uuid.go`
         ```go
         package uuid
 
@@ -40,6 +40,11 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
         }
         ```
     1. `go mod tidy`
+    1. Run the command
+        ```
+        go run go/cmd/main.go
+        2023/02/18 09:43:19 3d29fb5c-af25-11ed-ac50-467a6a605f23
+        ```
 1. Create `WORKSPACE` <- Just copy from [running-gazelle-with-bazel](https://github.com/bazelbuild/bazel-gazelle#running-gazelle-with-bazel).
 
 1. Create `BUILD.bazel`.
@@ -97,13 +102,15 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
 
     Check files:
 
-    - `cmd/BUILD.bazel`
+    - `go/cmd/BUILD.bazel`
         - `go_library`: function to build a package.
-            - `deps = ["//uuid"]` <- as we specified `gazelle:prefix`
+            - `deps = ["//go/uuid"]` <- as we specified `gazelle:prefix`
+            - `importpath = "github.com/nakamasato/bazel-training/go/cmd"`
         - `go_binary`: function to generate a binary.
     - `uuid/BUILD.bazel`
         - `go_library`
             - `deps` has an external dependency.
+            - `importpath = "github.com/nakamasato/bazel-training/go/uuid"`
 
 1. Generate dependency in `WORKSPACE` from `go.mod` with `gazelle`, which is required by `bazel`.
 
@@ -160,30 +167,29 @@ To build Go with Bazel, we use [gazelle](https://github.com/bazelbuild/bazel-gaz
         pass
     ```
 
-
-1. Build `cmd`.
-
-    ```
-    bazel build //cmd
-    ```
-
-1. Run `cmd`.
+1. Build `go/cmd`.
 
     ```
-    bazel run //cmd
+    bazel build //go/cmd
+    ```
+
+1. Run `go/cmd`.
+
+    ```
+    bazel run //go/cmd
     ```
 
     Result:
     ```
-    INFO: Analyzed target //cmd:cmd (0 packages loaded, 0 targets     configured).
+    INFO: Analyzed target //go/cmd:cmd (0 packages loaded, 0 targets configured).
     INFO: Found 1 target...
-    Target //cmd:cmd up-to-date:
-      bazel-bin/cmd/cmd_/cmd
-    INFO: Elapsed time: 0.274s, Critical Path: 0.00s
+    Target //go/cmd:cmd up-to-date:
+      bazel-bin/go/cmd/cmd_/cmd
+    INFO: Elapsed time: 0.202s, Critical Path: 0.00s
     INFO: 1 process: 1 internal.
     INFO: Build completed successfully, 1 total action
-    INFO: Build completed successfully, 1 total action
-    2022/06/21 18:17:36 fdc3fc88-f142-11ec-b4be-467a6a605f22
+    INFO: Running command line: bazel-bin/go/cmd/cmd_/cmd
+    2023/02/18 09:49:39 1fb08d92-af26-11ed-9c0e-467a6a605f23
     ```
 
 Notes:

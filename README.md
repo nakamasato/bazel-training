@@ -44,8 +44,8 @@ bazel 6.0.0
     1. check dep: `bazel query  --notool_deps --noimplicit_deps "deps(//java:App)" --output graph`
 1. Python: `bazel run //python:main`
 1. Go:
-    1. build: `bazel build //cmd`: Build a package `cmd`.
-    1. run: `bazel run //cmd`: Run a package `cmd`.
+    1. build: `bazel build //go/cmd`: Build a package `cmd`.
+    1. run: `bazel run //go/cmd`: Run a package `cmd`.
     1. `bazel run //:gazelle`: Generate build file.
     1. `bazel run //:gazelle -- update-repos -from_file=go.mod`: Update `go_repository` in `WORKSPACE` from `go.mod`.
 ## FAQ
