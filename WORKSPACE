@@ -45,6 +45,8 @@ go_register_toolchains(version = "1.18")
 
 gazelle_dependencies()
 
+# Protocol Buffers
+
 http_archive(
     name = "com_google_protobuf",
     sha256 = "930c2c3b5ecc6c9c12615cf5ad93f1cd6e12d0aba862b572e076259970ac3a53",
@@ -99,3 +101,17 @@ poetry(
     lockfile = "//:poetry.lock",
     pyproject = "//:pyproject.toml",
 )
+
+# gRPC
+http_archive(
+    name = "com_github_grpc_grpc",
+    sha256 = "ec125d7fdb77ecc25b01050a0d5d32616594834d3fe163b016768e2ae42a2df6",
+    strip_prefix = "grpc-1.52.1",
+    urls = [
+        "https://github.com/grpc/grpc/archive/refs/tags/v1.52.1.tar.gz",
+    ],
+)
+
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
