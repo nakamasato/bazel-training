@@ -1,5 +1,5 @@
 import pandas as pd
-from python.user_pb2 import User
+from proto.user_pb2 import User
 
 if __name__ == '__main__':
     user = User()
