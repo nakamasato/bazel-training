@@ -105,10 +105,10 @@ poetry(
 # gRPC
 http_archive(
     name = "com_github_grpc_grpc",
-    sha256 = "bdab9cb52e3ee703d6c09d15716bcc10a150b2e9e414182e5b375d32050dba84",
-    strip_prefix = "grpc-1.65.5",
+    sha256 = "eacf07e6354b6a30056b0338027b20c7f5a1da556a674d108cea1b8938d7abec",
+    strip_prefix = "grpc-1.66.0",
     urls = [
-        "https://github.com/grpc/grpc/archive/refs/tags/v1.65.5.tar.gz",
+        "https://github.com/grpc/grpc/archive/refs/tags/v1.66.0.tar.gz",
     ],
 )
 
