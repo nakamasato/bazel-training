@@ -6,6 +6,8 @@ on:
       - "python/**"
       - .github/workflows/python.yaml
       - WORKSPACE
+      - pyproject.toml
+      - poetry.lock
   push:
     branches:
       - main
